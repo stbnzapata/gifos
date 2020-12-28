@@ -4,24 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gifos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="sass/styles.css">
 </head>
 <body>
-    <main>
-        <header>
-            <div>
-                <img src="" alt="">
-            </div>
-            <div>
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"><i class="fas fa-plus" ></i></a></li>
+    <main class="principal">
+        <header class="encabezado">
+            <div class="contenedor-logo">
+                <a href="#"><img class="logo" src="img/logo-mobile.svg" alt="logo"></a>                               
+            </div>            
+            <input id="flag" class="btn" type="checkbox">
+            <label class="bars" for="flag"><i class="fas fa-bars"></i></label>
+            <label class="times" for="flag"><i class="fas fa-times"></i></label>
+            <div class="contenedor-menu">
+                <ul class="menu-encabezado">
+                    <li class="menu-item"><a class="item-enlace" href="#">modo nocturno</a></li>
+                    <li class="menu-item"><a class="item-enlace" href="#">favoritos</a></li>
+                    <li class="menu-item menu-item2"><a class="item-enlace" href="#">mis gifos</a></li>                    
+                    <li class="menu-item menu-item1"><a class="item-enlace" href="#"><i class="item-enlace1 fas fa-plus"></i></a></li>                    
                 </ul>
-            </div>
+            </div>            
         </header>
+        <section class="seccion-principal">
+            <div class="contenedor-titulo">
+                <h1 class="titulo-principal">Inspírate, busca, guarda, y crea los mejores <span class="gifos">gifos</span></h1>
+            </div>
+            <div class="contenedor-imagen-principal">
+                <img class="img-principal" src="img/ilustra_header.svg" alt="ilustración principal">
+                <form class="formulario-buscar">
+                    <div class="contenedor-buscar">
+                        <input class="buscar" type="text" placeholder="Busca Gifos y más">
+                        <img class="img-search" src="img/icon-search.svg" alt="imagen-search">
+                    </div>
+                </form>
+            </div>
+            <div class="contenedor-texto">
+                <h4 class="subtitulo1">trending:</h4>
+                <p class="parrafo1">Reactions, Entertainment, Sports, Stickers, Artists</p>
+            </div>
+        </section>
     </main>
+    <script src="js/app.js"></script>
 </body>
 </html>
