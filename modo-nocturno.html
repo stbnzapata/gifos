@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gifos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="sass/styles.css">
+</head>
+<body>
+    <main class="principal">
+        <header class="encabezado encabezado-nocturno">
+            <div class="contenedor-logo">
+                <a href="#"><img class="logo logo-nocturno" src="img/logo-mobile-modo-noct.svg" alt="logo"></a>                               
+            </div>            
+            <input id="flag" class="btn" type="checkbox">
+            <label class="bars" for="flag"><i class="fas fa-bars fas-nocturno" style="color: white;"></i></label>
+            <label class="times" for="flag"><i class="fas fa-times" style="color: white;"></i></label>
+            <div class="contenedor-menu contenedor-menu-nocturno">
+                <ul class="menu-encabezado menu-encabezado-nocturno">
+                    <li class="menu-item"><a class="item-enlace item-enlace-nocturno" href="index.html">modo diurno</a></li>
+                    <li class="menu-item"><a class="item-enlace item-enlace-nocturno" href="#">favoritos</a></li>
+                    <li class="menu-item menu-item2"><a class="item-enlace item-enlace-nocturno" href="#">mis gifos</a></li>                    
+                    <li class="menu-item menu-item1 menu-item1-nocturno"><a class="item-enlace item-enlace-nocturno item-enlace-nocturno1" href="#"><i class="item-enlace1 item-enlace1-nocturno fas fa-plus"></i></a></li>                    
+                </ul>
+            </div>            
+        </header>
+        <section class="seccion-principal seccion-principal-nocturno">
+            <div class="contenedor-titulo">
+                <h1 class="titulo-principal titulo-principal-nocturno">Inspírate, busca, guarda, y crea los mejores <span class="gifos">gifos</span></h1>
+            </div>
+            <div class="contenedor-imagen-principal">
+                <img class="img-principal" src="img/ilustra_header.svg" alt="ilustración principal">
+                <form class="formulario-buscar">
+                    <div class="contenedor-buscar">
+                        <input class="buscar" type="text" placeholder="Busca Gifos y más">
+                        <img class="img-search" src="img/icon-search.svg" alt="imagen-search">
+                    </div>
+                </form>
+            </div>
+            <div class="contenedor-texto">
+                <h4 class="subtitulo1 subtitulo1-nocturno">trending:</h4>
+                <p class="parrafo1 parrafo1-nocturno">Reactions, Entertainment, Sports, Stickers, Artists</p>
+            </div>
+        </section>
+        <section class="trending trending-nocturno">
+            <div class="trending-gifos">
+                <h2 class="title-trending title-trending-nocturno">Trending GIFOS</h2>
+                <p class="parrafo-trending parrafo-trending-nocturno"><span class="texto-trending1">Mira los ùltimos</span>GIFOS de nuestra comunidad.</p>
+            </div>
+            <div class="gif">
+                <img class="img-gif" src="https://cdn.pixabay.com/photo/2019/03/15/09/49/girl-4056684_960_720.jpg" alt="" width="243" height="187" />
+                <img class="img-gif" src="https://cdn.pixabay.com/photo/2020/10/03/14/54/rock-formations-5623735_960_720.jpg" alt="" width="243" height="187" />
+                <img class="img-gif img3" src="https://cdn.pixabay.com/photo/2019/12/08/21/21/snow-4682266_960_720.jpg" alt="" width="243" height="187" />
+            </div>
+        </section>
+        <footer class="foot foot-nocturno">
+            <div class="redes">
+                <div class="title-redes">
+                    <h4 class="title-footer title-footer-nocturno">Compartir en:</h4>
+                </div>
+                <div class="icons">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a> 
+                    <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a> 
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a> 
+                </div>
+            </div>
+            <div class="copy-right">
+                <p class="texto-copy-right texto-copy-right-nocturno">&copy; GIFOS 2020 All Rights Reserved.</p>
+            </div>
+        </footer>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>
