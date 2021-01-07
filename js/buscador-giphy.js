@@ -66,7 +66,6 @@ async function sugerir(){
    
 function borrar(){
 
-    
     d.getElementById("search").value = '';    
    
     sugerencia.innerHTML = `<label id='suge' class="list list1"><i   id="iconSuge" class="fas fa-search icon-search"></i>${[]} </label>`    
@@ -97,6 +96,7 @@ function borrar(){
     d.getElementById('iconSuge1').style.display="none";
     d.getElementById('iconSuge2').style.display="none";
     d.getElementById('iconSuge3').style.display="none";
+    
 }
 
 d.getElementById('btnSearch').addEventListener('click',function(){    
