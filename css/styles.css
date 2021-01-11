@@ -278,6 +278,10 @@ table {
   border-bottom-right-radius: 27px;
 }
 
+.seccion-principal .contenedor-imagen-principal .formulario-buscar .contenedor-buscar .buscar:focus-visible {
+  outline: none;
+}
+
 .seccion-principal .contenedor-imagen-principal .formulario-buscar .contenedor-buscar .list {
   display: block;
   padding: 10px 0 0 22px;
@@ -382,6 +386,15 @@ input {
   right: 15px;
   top: 10px;
   display: none;
+  color: #572EE5;
+  cursor: pointer;
+}
+
+.formulario-buscar > .contenedor-buscar > .img-search2 {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  display: none;
 }
 
 @media screen and (min-width: 950px) {
@@ -417,7 +430,10 @@ input {
     font-size: 16px;
   }
   .contenedor-buscar .img-search {
-    margin-right: 500px;
+    display: none;
+  }
+  .contenedor-buscar .img-search2 {
+    display: initial !important;
   }
 }
 

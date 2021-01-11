@@ -1,4 +1,7 @@
-const d = document, shows1 = d.getElementById('shows1');
+const d = document; 
+const shows1 = d.getElementById('shows1');
+const shows2 = d.getElementById('shows2');
+const shows3 = d.getElementById('shows3');
 const gif = d.querySelector('#gif');
 const gif1 = d.querySelector('#gif1');
 const gif2 = d.querySelector('#gif2');
@@ -26,15 +29,26 @@ const iconsuge = d.querySelector('#iconsuge');
 const iconsuge1 = d.querySelector('#iconsuge1');
 const iconsuge2 = d.querySelector('#iconsuge2');
 const iconsuge3 = d.querySelector('#iconsuge3');
+const vermas = d.querySelector('#vermas');
+const show = d.querySelector('#show');
+let offset = 0;
+
+d.getElementById('vermas').style.display='none';
 
 async function pedido(){
+    d.getElementById('show').style.display="flex";
+    d.getElementById('show').style.flexWrap="wrap";
+    d.getElementById('show').style.justifyContent="center";
+    d.getElementById('shows2').style.display="none";
+    d.getElementById('shows3').style.display="none";
+    d.getElementById('vermas').style.display='flex';
     shows1.innerHTML = `<img class="loader" src="../img/loader.svg" alt="Cargando..." style="display: block;
     margin: auto; margin-top:2%; width:54px; height:54px;">`;
     const keyword = d.getElementById('search').value; 
     tituloBusqueda.innerHTML = `<h2  class="titulo-img-busqueda">${keyword}</h2>`   
     const giphy = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=M2imEf1Dl7VF5mk2PciIWnuNhYZUVRwY&q=${keyword}&limit=25&offset=0&rating=g&lang=en`)
     .then(response => response.json())
-    .then(data => { 
+    .then(data => {        
         gif.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['0']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />`
         gif1.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['1']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
         gif2.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['2']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
@@ -47,8 +61,19 @@ async function pedido(){
         gif9.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['9']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
         gif10.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['10']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
         gif11.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['11']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-    });
-    borrar()    
+    })
+    .catch(error => console.error(
+        d.getElementById('shows2').style.display="initial",
+        d.getElementById('shows3').style.display="initial",
+        d.getElementById('vermas').style.display='none',
+        d.getElementById('show').style.display="none",
+        shows2.innerHTML = `<img class="sinresultado" src="../img/icon-busqueda-sin-resultado.svg" alt="Cargando..." style="display: block;
+        margin: auto; margin-top:2%; width:150px; height:150px;">`,
+        shows3.innerHTML = `<p class="txt-resul" style="color:#50E3C2; font-size:22px; text-align:center; font-family: "Montserrat"; line-height: 25px;">intenta con otra busqueda</>`
+    ));
+    borrar()
+    offset = 0
+   
 }
 
 async function sugerir(){
@@ -65,9 +90,7 @@ async function sugerir(){
     });    
 }
    
-function borrar(){
-
-    d.getElementById("search").value = '';    
+function borrar(){    
    
     sugerencia.innerHTML = `<label id='suge' class="list list1"><i   id="iconSuge" class="fas fa-search icon-search"></i>${[]} </label>`    
     sugerencia1.innerHTML = `<label id='suge1' class="list list1"><i id="iconSuge1" class="fas fa-search icon-search"></i>${[]}</label>`
@@ -124,7 +147,8 @@ d.getElementById('search').addEventListener('keypress', function(e){
 
 });
 
-d.getElementById('btnTimes').addEventListener('click',function(){    
+d.getElementById('btnTimes').addEventListener('click',function(){
+    d.getElementById("search").value = '';       
     borrar();
 },false);
 
@@ -186,6 +210,30 @@ d.getElementById('sugerencia3').addEventListener('click', function(){
     borrar2();
     d.getElementById("search").focus();
     pedido();
+});
+
+d.getElementById('vermas').addEventListener('click', function(){
+    offset = offset + 12; 
+    const keyword = d.getElementById('search').value; 
+    const giphy = fetch(`https://api.giphy.com/v1/gifs/search?api_key=M2imEf1Dl7VF5mk2PciIWnuNhYZUVRwY&q=${keyword}&limit=12&offset=${offset}&rating=g&lang=en`)
+    .then(response => response.json())
+    .then(data => { 
+        gif.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['0']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />`
+        gif1.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['1']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
+        gif2.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['2']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
+        gif3.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['3']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
+        gif4.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['4']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
+        gif5.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['5']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
+        gif6.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['6']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
+        gif7.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['7']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
+        gif8.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['8']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
+        gif9.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['9']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
+        gif10.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['10']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
+        gif11.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['11']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
+    });
+    if(offset >= 100){
+        d.getElementById('vermas').style.display='none';
+    }
 });
 
 

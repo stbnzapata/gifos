@@ -19,18 +19,10 @@ const contenido17 = document.querySelector('#contenido17');
 const contenido18 = document.querySelector('#contenido18');
 async function Traer () {
     
-    await fetch('https://api.giphy.com/v1/gifs/trending?api_key=M2imEf1Dl7VF5mk2PciIWnuNhYZUVRwY&limit=19&rating=g')
+    await fetch('https://api.giphy.com/v1/gifs/trending?api_key=M2imEf1Dl7VF5mk2PciIWnuNhYZUVRwY&limit=25&rating=g')
     .then(res => res.json())
     .then(data => {
         console.log(data.data['0']['images']['original']['url'])
-        // console.log(data.data['1']['images']['original']['url'])
-        // console.log(data.data['2']['images']['original']['url'])
-        // console.log(data.data['3']['images']['original']['url'])
-        // console.log(data.data['4']['images']['original']['url'])
-        // console.log(data.data['5']['images']['original']['url'])
-        // console.log(data.data['6']['images']['original']['url'])
-        // console.log(data.data['7']['images']['original']['url'])
-        // console.log(data.data['8']['images']['original']['url'])
         contenido.innerHTML = `<img class="img-gif" src="${data.data['0']['images']['original']['url']}" alt="" width="243" height="187" />`
         contenido1.innerHTML = `<img class="img-gif" src="${data.data['1']['images']['original']['url']}" alt="" width="243" height="187" />`
         contenido2.innerHTML = `<img class="img-gif" src="${data.data['2']['images']['original']['url']}" alt="" width="243" height="187" />`
