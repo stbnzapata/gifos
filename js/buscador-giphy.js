@@ -48,19 +48,237 @@ async function pedido(){
     tituloBusqueda.innerHTML = `<h2  class="titulo-img-busqueda">${keyword}</h2>`   
     const giphy = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=M2imEf1Dl7VF5mk2PciIWnuNhYZUVRwY&q=${keyword}&limit=25&offset=0&rating=g&lang=en`)
     .then(response => response.json())
-    .then(data => {        
-        gif.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['0']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif1.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['1']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif2.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['2']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif3.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['3']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif4.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['4']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif5.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['5']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif6.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['6']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif7.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['7']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif8.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['8']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif9.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['9']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif10.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['10']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif11.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['11']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
+    .then(data => {
+        
+        function downloaderBuscar(){
+
+            const imagenBuscada0 = data.data['0']['images']['original']['url'] 
+            fetch(imagenBuscada0)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg = URL.createObjectURL(myBlob)
+            gif.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['0']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar1(){
+
+            const imagenBuscada1 = data.data['1']['images']['original']['url'] 
+            fetch(imagenBuscada1)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg1 = URL.createObjectURL(myBlob)
+            gif1.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['1']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg1}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar2(){
+
+            const imagenBuscada2 = data.data['2']['images']['original']['url'] 
+            fetch(imagenBuscada2)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg2 = URL.createObjectURL(myBlob)
+            gif2.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['2']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg2}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar3(){
+
+            const imagenBuscada3 = data.data['3']['images']['original']['url'] 
+            fetch(imagenBuscada3)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg3 = URL.createObjectURL(myBlob)
+            gif3.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['3']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg3}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar4(){
+
+            const imagenBuscada4 = data.data['4']['images']['original']['url'] 
+            fetch(imagenBuscada4)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg4 = URL.createObjectURL(myBlob)
+            gif4.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['4']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg4}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar5(){
+
+            const imagenBuscada5 = data.data['5']['images']['original']['url'] 
+            fetch(imagenBuscada5)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg5 = URL.createObjectURL(myBlob)
+            gif5.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['5']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg5}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar6(){
+
+            const imagenBuscada6 = data.data['6']['images']['original']['url'] 
+            fetch(imagenBuscada6)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg6 = URL.createObjectURL(myBlob)
+            gif6.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['6']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg6}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar7(){
+
+            const imagenBuscada7 = data.data['7']['images']['original']['url'] 
+            fetch(imagenBuscada7)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg7 = URL.createObjectURL(myBlob)
+            gif7.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['7']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg7}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar8(){
+
+            const imagenBuscada8 = data.data['8']['images']['original']['url'] 
+            fetch(imagenBuscada8)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg8 = URL.createObjectURL(myBlob)
+            gif8.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['8']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg8}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar9(){
+
+            const imagenBuscada9 = data.data['9']['images']['original']['url'] 
+            fetch(imagenBuscada9)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg9= URL.createObjectURL(myBlob)
+            gif9.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['9']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg9}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar10(){
+
+            const imagenBuscada10 = data.data['10']['images']['original']['url'] 
+            fetch(imagenBuscada10)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg10= URL.createObjectURL(myBlob)
+            gif10.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['10']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg10}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar11(){
+
+            const imagenBuscada11 = data.data['11']['images']['original']['url'] 
+            fetch(imagenBuscada11)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg11= URL.createObjectURL(myBlob)
+            gif11.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['11']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg11}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        downloaderBuscar()
+        downloaderBuscar1()
+        downloaderBuscar2()
+        downloaderBuscar3()
+        downloaderBuscar4()
+        downloaderBuscar5()
+        downloaderBuscar6()
+        downloaderBuscar7()
+        downloaderBuscar8()
+        downloaderBuscar9()
+        downloaderBuscar10()
+        downloaderBuscar11()
+
     })
     .catch(error => console.error(
         d.getElementById('shows2').style.display="initial",
@@ -218,24 +436,238 @@ d.getElementById('vermas').addEventListener('click', function(){
     const giphy = fetch(`https://api.giphy.com/v1/gifs/search?api_key=M2imEf1Dl7VF5mk2PciIWnuNhYZUVRwY&q=${keyword}&limit=12&offset=${offset}&rating=g&lang=en`)
     .then(response => response.json())
     .then(data => { 
-        gif.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['0']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif1.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['1']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif2.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['2']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif3.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['3']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif4.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['4']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif5.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['5']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif6.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['6']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif7.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['7']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif8.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['8']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif9.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['9']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif10.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['10']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
-        gif11.innerHTML = `<img class="img-buscar img-buscar2" src="${data.data['11']['images']['original']['url']}" alt="Cargando..." width="156" height="120" style="margin-top: 25px" />`
+        function downloaderBuscar(){
+
+            const imagenBuscada0 = data.data['0']['images']['original']['url'] 
+            fetch(imagenBuscada0)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg = URL.createObjectURL(myBlob)
+            gif.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['0']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar1(){
+
+            const imagenBuscada1 = data.data['1']['images']['original']['url'] 
+            fetch(imagenBuscada1)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg1 = URL.createObjectURL(myBlob)
+            gif1.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['1']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg1}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar2(){
+
+            const imagenBuscada2 = data.data['2']['images']['original']['url'] 
+            fetch(imagenBuscada2)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg2 = URL.createObjectURL(myBlob)
+            gif2.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['2']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg2}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar3(){
+
+            const imagenBuscada3 = data.data['3']['images']['original']['url'] 
+            fetch(imagenBuscada3)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg3 = URL.createObjectURL(myBlob)
+            gif3.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['3']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg3}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar4(){
+
+            const imagenBuscada4 = data.data['4']['images']['original']['url'] 
+            fetch(imagenBuscada4)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg4 = URL.createObjectURL(myBlob)
+            gif4.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['4']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg4}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar5(){
+
+            const imagenBuscada5 = data.data['5']['images']['original']['url'] 
+            fetch(imagenBuscada5)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg5 = URL.createObjectURL(myBlob)
+            gif5.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['5']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg5}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar6(){
+
+            const imagenBuscada6 = data.data['6']['images']['original']['url'] 
+            fetch(imagenBuscada6)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg6 = URL.createObjectURL(myBlob)
+            gif6.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['6']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg6}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar7(){
+
+            const imagenBuscada7 = data.data['7']['images']['original']['url'] 
+            fetch(imagenBuscada7)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg7 = URL.createObjectURL(myBlob)
+            gif7.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['7']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg7}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar8(){
+
+            const imagenBuscada8 = data.data['8']['images']['original']['url'] 
+            fetch(imagenBuscada8)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg8 = URL.createObjectURL(myBlob)
+            gif8.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['8']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg8}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar9(){
+
+            const imagenBuscada9 = data.data['9']['images']['original']['url'] 
+            fetch(imagenBuscada9)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg9= URL.createObjectURL(myBlob)
+            gif9.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['9']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg9}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar10(){
+
+            const imagenBuscada10 = data.data['10']['images']['original']['url'] 
+            fetch(imagenBuscada10)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg10= URL.createObjectURL(myBlob)
+            gif10.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['10']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg10}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        function downloaderBuscar11(){
+
+            const imagenBuscada11 = data.data['11']['images']['original']['url'] 
+            fetch(imagenBuscada11)
+            .then((res) => res.blob())
+            .then(function (myBlob) {
+            const objectURLimg11= URL.createObjectURL(myBlob)
+            gif11.innerHTML = `<img class="img-buscar img-buscar1" src="${data.data['11']['images']['original']['url']}" alt="cargando..." width="156" height="120" style="margin-top: 25px" />
+            <div class="enlaces-img">
+                <img class="icons img-fav" src="./img/icon-fav.svg" alt="">
+                <a href="${objectURLimg11}" download="img.gif"><img class="icons img-dow" src="./img/icon-download.svg" alt=""></a>
+                <img class="icons img-max" src="./img/icon-max-normal.svg" alt="">
+            </div>`
+
+            });
+
+        }
+
+        downloaderBuscar()
+        downloaderBuscar1()
+        downloaderBuscar2()
+        downloaderBuscar3()
+        downloaderBuscar4()
+        downloaderBuscar5()
+        downloaderBuscar6()
+        downloaderBuscar7()
+        downloaderBuscar8()
+        downloaderBuscar9()
+        downloaderBuscar10()
+        downloaderBuscar11()
     });
     if(offset >= 100){
         d.getElementById('vermas').style.display='none';
     }
 });
-
-
 
 
